@@ -14,5 +14,9 @@ public class DrawingApp {
 		
 		Triangle2 t2 = (Triangle2) context.getBean("triangle-new");
 		t2.draw();
+		
+		System.out.println("Triangle 3 injection");
+		Triangle3 t3 = (Triangle3) context.getBean("triangle3");
+		t3.draw();
 	}
 }

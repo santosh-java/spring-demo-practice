@@ -8,18 +8,24 @@
 	</bean>
 
 	<bean id="triangleNew" class="com.santosh.spring.Triangle2">
-		<property name="pointA" ref="zeroPoint" />
+		<property name="points">
+			<list>
+				<ref bean="zeroPoint" />
+				<ref bean="point1" />
+				<ref bean="point2" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="triangle3" class="com.santosh.spring.Triangle3">
+		<property name="pointA">
+			<ref bean="zeroPoint" />
+		</property>
 		<property name="pointB">
-			<bean class="com.santosh.spring.Point">
-				<property name="x" value="-20" />
-				<property name="y" value="0" />
-			</bean>
+			<ref bean="point1" />
 		</property>
 		<property name="pointC">
-			<bean class="com.santosh.spring.Point">
-				<property name="x" value="0" />
-				<property name="y" value="20" />
-			</bean>
+			<ref bean="point2" />
 		</property>
 	</bean>
 
@@ -27,6 +33,13 @@
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>
-
+	<bean id="point1" class="com.santosh.spring.Point">
+		<property name="x" value="-20" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="point2" class="com.santosh.spring.Point">
+		<property name="x" value="0" />
+		<property name="y" value="20" />
+	</bean>
 	<alias name="triangleNew" alias="triangle-new" />
 </beans>
